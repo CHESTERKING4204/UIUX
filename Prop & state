@@ -1,0 +1,25 @@
+import React, { useState } from 'react';
+
+function StateExample() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+
+export default StateExample;
+
+
+function ChildComponent(props) {
+  return <h1>Hello, {props.name}!</h1>;
+}
+
+function PropsExample() {
+  return <ChildComponent name="John" />;
+}
+
+export default PropsExample;
