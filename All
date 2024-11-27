@@ -1,0 +1,44 @@
+import React, { Component, useState } from 'react';
+
+// Class Component
+class ParentComponent extends Component {
+  greet() {
+    return 'Hello from Parent!';
+  }
+}
+
+// Child Component with Props and Inheritance
+class ChildComponent extends ParentComponent {
+  render() {
+    return <h1>{this.greet()} My name is {this.props.name}.</h1>;
+  }
+}
+
+// Functional Component using State and Iterator
+function ListWithState() {
+  const [items, setItems] = useState(['Apple', 'Banana', 'Cherry']);
+
+  return (
+    <div>
+      <ul>
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+      <button onClick={() => setItems([...items, 'New Item'])}>
+        Add Item
+      </button>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <ChildComponent name="John" />
+      <ListWithState />
+    </div>
+  );
+}
+
+export default App;
