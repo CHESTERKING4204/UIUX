@@ -1,0 +1,26 @@
+import React, { Component } from 'react';
+
+class ClassExample extends Component {
+  render() {
+    return <h1>Hello from a Class Component!</h1>;
+  }
+}
+
+export default ClassExample;
+
+
+import React, { Component } from 'react';
+
+class ParentComponent extends Component {
+  greet() {
+    return 'Hello from Parent!';
+  }
+}
+
+class ChildComponent extends ParentComponent {
+  render() {
+    return <h1>{this.greet()}</h1>;
+  }
+}
+
+export default ChildComponent;
